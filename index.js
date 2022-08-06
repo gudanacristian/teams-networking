@@ -12,21 +12,24 @@ function getTeamHTML(team) {
 }
 
 function displayTeams(teams) {
-  //transforma in html
-  var teamsHTML = "";
-  teams.forEach(function (team) {
-    console.info(team.promotion);
-    teamsHTML += getTeamHTML(team);
+  // transforma in html
+  // var teamsHTML = "";
+  // teams.forEach(function (team) {
+  //   teamsHTML += getTeamHTML(team);
+  // });
+
+  var teamsHTML = teams.map(function (team) {
+    return getTeamHTML(team);
   });
+  console.warn("teamsHTML", teamsHTML);
 
   // afisare
-  document.querySelector("table tbody").innerHTML = teamsHTML;
+  document.querySelector("table tbody").innerHTML = teamsHTML.join("");
 }
 
 function loadTeams() {
   fetch("data/teams.json")
     .then(function (r) {
-      console.info(r);
       return r.json();
     })
     .then(function (teams) {
