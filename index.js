@@ -15,8 +15,8 @@ function getTeamHTML(team) {
         <a href="${team.url}" target="_blank">open</a>
       </td>
       <td>
-      <a href="#" data-id="${team.id}" class="delete-btn">✖</a>
-      <a href="#" data-id="${team.id}" class="edit-btn">&#9998;</a>
+        <a href="#" data-id="${team.id}" class="delete-btn">✖</a>
+        <a href="#" data-id="${team.id}" class="edit-btn">&#9998;</a>
       </td>
   </tr>`;
 }
